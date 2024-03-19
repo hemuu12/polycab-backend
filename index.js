@@ -12,7 +12,9 @@ app.use(bodyParser.json({ limit: "10mb" }));
 app.use(bodyParser.urlencoded({ limit: "10mb", extended: true }));
 app.use(cors())
 
-
+app.get("/", (req, res) => {
+    res.send("Welcome to the home page");
+});
 
 app.use("/data",itemRouter)
 
