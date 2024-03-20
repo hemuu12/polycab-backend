@@ -3,6 +3,8 @@ const mongoose = require("mongoose");
 const itemSchema = mongoose.Schema(
   {
     uniqueId: { type: Number },
+    name:{type : String},
+    address:{type:String},
     location: {
       type: {
         latitude: { type: Number },
@@ -22,3 +24,4 @@ const itemModel = mongoose.model("Item", itemSchema);
 module.exports = {
   itemModel,
 };
+  

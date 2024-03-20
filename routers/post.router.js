@@ -42,6 +42,8 @@ itemRouter.post("/add", upload.single('featuredImage'), async (req, res) => {
         }
       const newItem = new itemModel({
         uniqueId: req.body.uniqueId,
+        name: req.body.name,
+        address: req.body.address,
         shortVideo: req.body.shortVideo,
         tourLink: req.body.tourLink,
         description: req.body.description,
