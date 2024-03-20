@@ -1,6 +1,6 @@
 const express = require("express");
 const multer = require("multer");
-const { itemModel } = require("../models/post.model.js");
+const { itemModel } = require("../models/factoryData.model.js");
 
 const itemRouter = express.Router();
 const upload = multer(); // Initialize multer

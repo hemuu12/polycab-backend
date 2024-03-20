@@ -2,8 +2,8 @@ const express=require("express")
 const cors=require("cors")
 const { connection } = require("./config/db")
 const bodyParser = require("body-parser");
-const { itemRouter }=require("./routers/post.router.js")
-
+const { itemRouter }=require("./routers/factoryData.router.js");
+const { userRouter } = require("./routers/user.router.js");
 
 
 const app=express()
@@ -17,6 +17,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/data",itemRouter)
+app.use("/user",userRouter)
 
 
 app.listen(process.env.port,async(req,res)=>{
