@@ -19,11 +19,12 @@ const userSchema = mongoose.Schema(
       match: [/^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$/, 'Please fill a valid email address']
     },
     factoryAccess: [
-      {
-        factoryId: { type : mongoose.Schema.Types.Mixed},
-        accessGrantedByAdmin: { type: Boolean, default: false },
-      },
-    ],
+        {
+          factoryId: { type: mongoose.Schema.Types.ObjectId, ref: 'Item' },
+          name: { type: String },
+          accessGrantedByAdmin: { type: Boolean, default: false },
+        },
+    ]
   },
   { versionKey: false }
 );

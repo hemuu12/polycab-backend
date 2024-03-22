@@ -14,53 +14,36 @@ userRouter.get("/all", async (req, res) => {
       res.status(500).json({ message: "Server Error" });
     }
 });
-
-
-// Create a new user
-userRouter.post("/add", async (req, res) => {
-    try {
-      const newUser = new userModel({
-        name: req.body.name,
-        email: req.body.email,
-        factoryAccess: [{
-            factoryId: Number(req.body.factoryAccess[0].factoryId), // Convert factoryId to a number
-            accessGrantedByAdmin: false
-        }
-        ], // Initialize factory access to an empty array
-      });
-      await newUser.save();
-      res.status(201).send(newUser);
-    } catch (err) {
-      console.log(err);
-      res.status(500).send("Serve   r Error");
+// User updates their factory access
+userRouter.put("/update-access/:email", async (req, res) => {
+  try {
+    const { factoryId, accessGrantedByAdmin } = req.body.factories[0];
+    if (!factoryId || typeof accessGrantedByAdmin !== 'boolean') {
+      return res.status(400).send("Invalid request body");
     }
-  });
 
+    const userEmail = req.params.email; // Extract the email from route params
 
-// Grant factory access to a user
-userRouter.get("/", async (req, res) => {
-    try {
-      const users = await User.find().populate("factoryAccess");
-      res.json(users);
-    } catch (err) {
-      res.status(500).json({ message: err.message });
+    const user = await userModel.findOne({ email: userEmail });
+    if (!user) {
+      return res.status(404).send("User not found");
     }
-  });
 
-userRouter.put("/:userId/factory-access/:factoryId", async (req, res) => {
-    try {
-      const { userId, factoryId } = req.params;
-      const user = await User.findById(userId);
-      if (!user) {
-        return res.status(404).json({ message: "User not found" });
-      }
-      user.factoryAccess.push(factoryId);
-      await user.save();
-      res.json(user);
-    } catch (err) {
-      res.status(500).json({ message: err.message });
+    const factoryAccess = user.factoryAccess.find(f => f._id.toString() === factoryId);
+    if (!factoryAccess) {
+      return res.status(404).send("Factory access not found for this user");
     }
-  });
+
+    factoryAccess.accessGrantedByAdmin = accessGrantedByAdmin;
+    await user.save();
+    res.status(200).send("Factory access updated successfully");
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Server Error");
+  }
+});
+
+
 
 module.exports = {
   userRouter,
