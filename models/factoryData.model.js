@@ -24,4 +24,3 @@ const itemModel = mongoose.model("Item", itemSchema);
 module.exports = {
   itemModel,
 };
-  

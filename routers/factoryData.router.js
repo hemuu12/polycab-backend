@@ -77,8 +77,6 @@ itemRouter.put("/update/:id", upload.single('featuredImage'), async (req, res) =
       // Delete the previous featuredImage if it exists
       if (item.featuredImage) {
         // Perform deletion of previous featuredImage
-        // For example, if it's stored in the database as a Buffer
-        // You may need to adjust this based on how your images are stored
         item.featuredImage = undefined;
         await item.save();
       }
@@ -114,8 +112,6 @@ itemRouter.put("/update/:id", upload.single('featuredImage'), async (req, res) =
     res.status(500).send("Server Error");
   }
 });
-
-
 
 
 

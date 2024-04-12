@@ -31,6 +31,31 @@ const userSchema = mongoose.Schema(
 
 const userModel = mongoose.model("User", userSchema);
 
+const requestSchema = mongoose.Schema({
+  firstName: { type: String, required: true },
+  lastName: { type: String, required: true },
+  email: {
+    type: String,
+    trim: true,
+    lowercase: true,
+    unique: true,
+    required: true,
+    validate: [validateEmail, 'Please fill a valid email address'],
+    match: [/^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$/, 'Please fill a valid email address']
+  },
+  status: { type: String, enum: ['Pending', 'Approved', 'Rejected'], default: 'Pending' },
+  factoryAccess: [
+    {
+      factoryId: { type: mongoose.Schema.Types.ObjectId, ref: 'Item' },
+      name: { type: String },
+      accessGrantedByAdmin: { type: Boolean, default: false },
+    },
+]
+});
+
+const requestModel = mongoose.model("Request", requestSchema);
+
 module.exports = {
   userModel,
+  requestModel
 };
