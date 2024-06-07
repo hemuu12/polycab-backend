@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Template</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/3494d3b9c1.js" crossorigin="anonymous"></script>
+</head>
+<style>
+
+.img_wrapper{
+    margin: auto;
+    text-align: center;
+}
+.thank-you-wrapper{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    background: linear-gradient(113deg, #FE3B1F 0%, #1F93C7 44%, #0E9AD4 65%, #C028B9 100%) 0% 0% ;
+    padding: 20px;
+    width: 90%;
+    color: white;
+    margin-top: 20px;
+}
+
+.thank-you-wrapper>h1{
+    font-family: 'Poppins', sans-serif; 
+    font-style: italic;
+    font-weight: bold; 
+}
+.thank-you-wrapper>p{
+   width: 90%;
+   margin: auto;
+   padding: 5px;
+   font-family: 'Poppins', sans-serif;
+   font-weight: normal;
+   letter-spacing: 0px;
+   margin-top: 20px;
+}
+
+#content{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    margin: auto;
+    justify-content: center;
+    padding: 10px;
+    justify-content: center;
+    width: 95%;
+    font-family: 'Poppins', sans-serif;
+    font-weight: normal;
+    margin-top: 30px;
+  
+}
+.item_wrapper{
+    display: flex;
+    gap: 5px;
+    padding: 10px;
+}
+.icon_wrapper{
+   margin-top: 1px;
+   size: 10px;
+   width: 20px;
+   height: 10px;
+   color: #FE3B1F;
+
+}
+.text_wrapper{
+    font-size: 16px;
+}
+.location{
+    font-weight: 600;
+    color: blue;
+    text-decoration: underline ;
+}
+.title{
+    width: 80%;
+    color: #333333;
+}
+.bg-image{
+    background-image: url("./images/images.jpeg");
+    width: 100%;
+    height: 400px;
+    margin-top: 20px;
+}
+.disclaimer{
+    text-align: center;
+    margin-top: 5px;
+    color: #333333;
+}
+.disclaimer p{
+    width: 85%;
+    margin: auto;
+    font-family: 'Poppins', sans-serif;
+    font-weight: normal;
+}
+@media (max-width: 767px) {
+    .thank-you-wrapper {
+        width: 96%;
+        padding: 8px;
+    }
+
+    .thank-you-wrapper > p {
+        width: 100%;
+    }
+
+    #content {
+        grid-template-columns: 1fr;
+    }
+
+    .item_wrapper {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .title {
+        width: 100%;
+        text-align: center;
+    }
+
+    .disclaimer p {
+        width: 96%;
+        padding: 0 10px;
+    }
+}
+
+/* Styles for medium screens (tablets) */
+@media (min-width: 768px) and (max-width: 991px) {
+    #content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+</style>
+<body>
+    <div>
+
+        <div class="img_wrapper"><img width="140px" height="70px" src="./images/LOGO-01.png" alt="logo"></div>
+        <div class="thank-you-wrapper">
+            <h1>Thank you for Sign in</h1>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit ducimus dolorum cupiditate, quam asperiores nobis deserunt aliquam at. In fugiat commodi aperiam sint porro dolor distinctio sed veniam optio minus adipisicing elit. Odit ducimus dolorum cupiditate, quam asperiores nobis deserunt aliquam at. In fugiat commodi aperiam sint porro dolor distinctio sed veniam optio minus.adipisicing elit. Odit ducimus dolorum cupiditate, quam asperiores nobis deserunt aliquam at. In fugiat commodi aperiam sint porro dolor distinctio sed veniam optio minus. adipisicing elit. Odit ducimus dolorum cupiditate, quam asperiores nobis deserunt aliquam at. In fugiat commodi aperiam sint porro dolor distinctio sed veniam optio minus. adipisicing elit. Odit ducimus dolorum cupiditate, quam asperiores nobis deserunt aliquam at. In fugiat commodi aperiam sint porro dolor distinctio sed veniam optio minus.</p>
+        </div>
+
+        <div id="content">
+        </div>
+        <div class="bg-image"></div>
+        <div class="disclaimer">
+            <h1>Disclaimer</h1>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem id eum quisquam rerum veniam optio, debitis corrupti dolores hic necessitatibus consequuntur quos quidem. Fuga non molestiae, dolorum est veritatis voluptatem? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio, officia molestias at, animi provident mollitia veniam autem voluptatem laborum commodi incidunt nemo magnam. Nisi tempora deleniti exercitationem cumque tenetur beatae!Lorem Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed voluptates non dolores dolore nisi nesciunt. Temporibus mollitia repellat molestias aspernatur reiciendis laboriosam magni similique, harum error magnam debitis vero minus consectetur adipisicing elit. Autem id eum quisquam rerum veniam optio, debitis corrupti dolores hic necessitatibus consequuntur quos quidem. Fuga non molestiae, dolorum est veritatis voluptatem? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio, officia molestias at, animi provident mollitia veniam autem voluptatem laborum commodi incidunt nemo magnam. Nisi tempora deleniti exercitationem cumque tenetur beatae!Lorem Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed voluptates non dolores dolore nisi nesciunt. Temporibus mollitia repellat molestias aspernatur reiciendis laboriosam magni similique, harum error magnam debitis vero minus?</p>
+
+        </div>
+
+    </div>
+</body>
+</html>
+<script >
+
+
+
+const contentDiv = document.getElementById('content');
+
+const data = [
+    { name: "Vadodra, Gujrat", image: "fa-location-dot", title: "Lorem ipsum, dolor sit amet consectetur consectetur consectetur" },
+    { name: "Vadodra, Gujrat", image: "fa-location-dot", title: "Lorem ipsum, dolor sit amet consectetur consectetur consectetur" },
+    { name: "Vadodra, Gujrat", image: "fa-location-dot", title: "Lorem ipsum, dolor sit amet consectetur consectetur consectetur" },
+    { name: "Vadodra, Gujrat", image: "fa-location-dot", title: "Lorem ipsum, dolor sit amet consectetur consectetur consectetur" },
+    { name: "Vadodra, Gujrat", image: "fa-location-dot", title: "Lorem ipsum, dolor sit amet consectetur consectetur consectetur" },
+    { name: "Vadodra, Gujrat", image: "fa-location-dot", title: "Lorem ipsum, dolor sit amet consectetur consectetur consectetur" },
+    { name: "Vadodra, Gujrat", image: "fa-location-dot", title: "Lorem ipsum, dolor sit amet consectetur consectetur consectetur" },
+    { name: "Vadodra, Gujrat", image: "fa-location-dot", title: "Lorem ipsum, dolor sit amet consectetur consectetur consectetur" }
+];
+
+data.forEach(entry => {
+    const itemDiv = document.createElement('div');
+    itemDiv.className = 'item_wrapper';
+
+    const iconDiv = document.createElement('div');
+    iconDiv.className = 'icon_wrapper';
+    const icon = document.createElement('i');
+    icon.className = `fas ${entry.image}`;
+    iconDiv.appendChild(icon);
+
+    const textDiv = document.createElement('div');
+    textDiv.className = 'text_wrapper';
+    const a = document.createElement('a');
+    a.className = 'location';
+    a.textContent = entry.name;
+    const p = document.createElement('p');
+    p.className = 'title';
+    p.textContent = entry.title;
+    textDiv.appendChild(a);
+    textDiv.appendChild(p);
+
+    itemDiv.appendChild(iconDiv);
+    itemDiv.appendChild(textDiv);
+
+    contentDiv.appendChild(itemDiv);
+});
+</script>

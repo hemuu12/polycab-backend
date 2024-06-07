@@ -31,6 +31,9 @@ const userSchema = mongoose.Schema(
 
 const userModel = mongoose.model("User", userSchema);
 
+
+// request model
+
 const requestSchema = mongoose.Schema({
   firstName: { type: String, required: true },
   lastName: { type: String, required: true },
@@ -50,7 +53,8 @@ const requestSchema = mongoose.Schema({
       name: { type: String },
       accessGrantedByAdmin: { type: Boolean, default: false },
     },
-]
+],
+  unique_id: { type:String }
 });
 
 const requestModel = mongoose.model("Request", requestSchema);
