@@ -2,7 +2,7 @@
 const express = require("express");
 const { userModel} = require("../models/user.model.js");
 const jwt= require("jsonwebtoken");
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const userRouter = express.Router();
 
 // All users get by admin
