@@ -4,15 +4,11 @@ const { connection } = require("./config/db")
 const bodyParser = require("body-parser");
 const { itemRouter }=require("./routers/factoryData.router.js");
 const { userRouter } = require("./routers/user.router.js");
-// const Authrouter = require("./routers/auth.router.js");
-// const authenticateJWT = require("./middleware/authMiddleware.js");
-// const JWTrouter = require("./routers/JWT.router.js");
-// const sessionMiddleware = require("./config/sessionConfig.js");
+
 
 
 const app=express()
 
-// app.use(sessionMiddleware);
 app.use(express.json())
 app.use(bodyParser.json({ limit: "10mb" }));
 app.use(bodyParser.urlencoded({ limit: "10mb", extended: true }));
