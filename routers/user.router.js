@@ -1,10 +1,7 @@
 // user.router.js
 const express = require("express");
-const { userModel  , requestModel} = require("../models/user.model.js");
-const nodemailer = require('nodemailer');
+const { userModel} = require("../models/user.model.js");
 const jwt= require("jsonwebtoken");
-const { generateUniqueID ,generateLinkForUnique } = require("../utils/globalfun.js");
-const app = express();
 const bcrypt = require('bcrypt');
 const userRouter = express.Router();
 

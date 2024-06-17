@@ -18,11 +18,10 @@ app.get("/", (req, res) => {
     res.send("Welcome to the home page");
 });
 
-// app.use(sessionMiddleware);
+
 app.use(express.json());
 
-// app.use('/auth', Authrouter);
-// app.use('/jwt', authenticateJWT,JWTrouter);
+
 
 app.use("/data",itemRouter)
 app.use("/user",userRouter)
